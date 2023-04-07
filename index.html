@@ -5,14 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Website</title>
     <style>
-        body { margin: 0; }
+        body {
+            margin: 0;
+            /* Matte white background color */
+            background-color: #F0F0F0;
+            color: #333;
+        }
+        .black-bg {
+            /* Matte black background color */
+            background-color: #202020;
+            color: #E0E0E0;
+        }
         canvas { display: block; }
+        /* Style the button */
+        .color-switch-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            padding: 10px;
+            cursor: pointer;
+            background: transparent;
+            border: none;
+        }
     </style>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <!-- Button with pixel-style icon -->
+    <button class="color-switch-btn" onclick="switchColor()">
+        <i class="fas fa-adjust"></i>
+    </button>
+
     <script src="https://threejs.org/build/three.js"></script>
     <script src="https://threejs.org/examples/jsm/controls/OrbitControls.js"></script>
     <script>
+        // Function to switch the website color
+        function switchColor() {
+            document.body.classList.toggle('black-bg');
+        }
+
         // Set up the scene, camera, and renderer
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
