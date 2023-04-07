@@ -75,12 +75,18 @@
     </div>
 
     <script>
-        let isDarkMode = false;
+       let isDarkMode = false;
+        const floatingText = document.querySelector('.floating-text'); // Add reference to the floating-text element
 
         function toggleDarkMode() {
             isDarkMode = !isDarkMode;
             document.body.classList.toggle('dark-mode');
-            document.querySelector('.color-switch').classList.toggle('active');
+            document.querySelector('.color-switch').classList.toggle('active'); // Use .color-switch instead of .moon-switch
+            if (isDarkMode) {
+                floatingText.textContent = 'yubin (ᴗ˳ᴗ)zzz ☁️'; // Sleeping kaomoji
+            } else {
+                floatingText.textContent = 'yubin (｡･ω･｡)ﾉ ☁️'; // Original kaomoji
+            }
         }
     </script>
 </body>
